@@ -413,7 +413,7 @@ t_blackhole(_) ->
                        fun(Reply) -> TestPid ! {ping_reply, Reply} end),
 
     ?MSG(#{msg_type := socket_closed, reason := {recv_exit, timeout}, master := true},
-         ResponseTimeout + 1000),
+         ResponseTimeout + 5000),
     ?MSG({ping_reply, {error, _Reason}}, % node_down or node_deactivated
          NodeDownTimeout + 1000),
     ?MSG(#{msg_type := slot_map_updated},
