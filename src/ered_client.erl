@@ -39,7 +39,7 @@
          port :: inet:port_number(),
 
          %% From "connection opts"
-         batch_size = 16 :: non_neg_integer(),
+         batch_size = 16 :: pos_integer(),
          transport = gen_tcp :: gen_tcp | ssl,
          transport_opts = [] :: list(),
          connect_timeout = infinity :: timeout(),
